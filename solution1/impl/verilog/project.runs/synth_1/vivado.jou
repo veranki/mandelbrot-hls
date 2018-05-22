@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:54:30 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Thu May 17 09:35:09 2018
+# Process ID: 20907
+# Current directory: /mnt/f/dev/mandelbrot-hls/solution1/impl/verilog/project.runs/synth_1
+# Command line: vivado -log mandlebrot_main.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source mandlebrot_main.tcl
+# Log file: /mnt/f/dev/mandelbrot-hls/solution1/impl/verilog/project.runs/synth_1/mandlebrot_main.vds
+# Journal file: /mnt/f/dev/mandelbrot-hls/solution1/impl/verilog/project.runs/synth_1/vivado.jou
+#-----------------------------------------------------------
+source mandlebrot_main.tcl -notrace

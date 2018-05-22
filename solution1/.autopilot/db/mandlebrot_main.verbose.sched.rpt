@@ -1,0 +1,800 @@
+
+
+================================================================
+== Vivado HLS Report for 'mandlebrot_main'
+================================================================
+* Date:           Thu May 17 09:28:32 2018
+
+* Version:        2017.4 (Build 2086221 on Fri Dec 15 21:13:33 MST 2017)
+* Project:        mandelbrot-hls
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|      8.23|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +----------+------------+----------+------------+---------+
+    |        Latency        |        Interval       | Pipeline|
+    |    min   |     max    |    min   |     max    |   Type  |
+    +----------+------------+----------+------------+---------+
+    |  24126465|  7531930625|  24126465|  7531930625|   none  |
+    +----------+------------+----------+------------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-----------------+----------+------------+------------------+-----------+-----------+---------+----------+
+        |                 |        Latency        |     Iteration    |  Initiation Interval  |   Trip  |          |
+        |    Loop Name    |    min   |     max    |      Latency     |  achieved |   target  |  Count  | Pipelined|
+        +-----------------+----------+------------+------------------+-----------+-----------+---------+----------+
+        |- Loop 1         |  24126464|  7531930624| 47122 ~ 14710802 |          -|          -|      512|    no    |
+        | + Loop 1.1      |     47104|    14710784|    46 ~ 14366    |          -|          -|     1024|    no    |
+        |  ++ Loop 1.1.1  |        28|       14347|                28|          -|          -| 1 ~ 512 |    no    |
+        +-----------------+----------+------------+------------------+-----------+-----------+---------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 63
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / (!exitcond1)
+3 --> 
+	4  / true
+4 --> 
+	5  / true
+5 --> 
+	6  / true
+6 --> 
+	7  / true
+7 --> 
+	8  / true
+8 --> 
+	9  / true
+9 --> 
+	10  / true
+10 --> 
+	11  / true
+11 --> 
+	12  / true
+12 --> 
+	13  / true
+13 --> 
+	14  / true
+14 --> 
+	15  / true
+15 --> 
+	16  / true
+16 --> 
+	17  / true
+17 --> 
+	18  / true
+18 --> 
+	19  / true
+19 --> 
+	20  / (!exitcond)
+	2  / (exitcond)
+20 --> 
+	21  / true
+21 --> 
+	22  / true
+22 --> 
+	23  / true
+23 --> 
+	24  / true
+24 --> 
+	25  / true
+25 --> 
+	26  / true
+26 --> 
+	27  / true
+27 --> 
+	28  / true
+28 --> 
+	29  / true
+29 --> 
+	30  / true
+30 --> 
+	31  / true
+31 --> 
+	32  / true
+32 --> 
+	33  / true
+33 --> 
+	34  / true
+34 --> 
+	35  / true
+35 --> 
+	36  / true
+36 --> 
+	37  / (!tmp)
+	47  / (tmp)
+37 --> 
+	38  / true
+38 --> 
+	39  / true
+39 --> 
+	40  / true
+40 --> 
+	41  / true
+41 --> 
+	42  / true
+42 --> 
+	43  / true
+43 --> 
+	44  / true
+44 --> 
+	45  / true
+45 --> 
+	46  / true
+46 --> 
+	47  / true
+47 --> 
+	48  / (!tmp & tmp_5)
+	19  / (tmp) | (!tmp_5)
+48 --> 
+	49  / true
+49 --> 
+	50  / true
+50 --> 
+	51  / true
+51 --> 
+	52  / true
+52 --> 
+	53  / true
+53 --> 
+	54  / true
+54 --> 
+	55  / true
+55 --> 
+	56  / true
+56 --> 
+	57  / true
+57 --> 
+	58  / true
+58 --> 
+	59  / true
+59 --> 
+	60  / true
+60 --> 
+	61  / true
+61 --> 
+	62  / true
+62 --> 
+	63  / true
+63 --> 
+	36  / true
+
+* FSM state operations: 
+
+ <State 1> : 1.77ns
+ST_1 : Operation 64 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([524288 x i32]* %res) nounwind, !map !34"
+ST_1 : Operation 65 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecTopModule([16 x i8]* @mandlebrot_main_str) nounwind"
+ST_1 : Operation 66 [1/1] (1.76ns)   --->   "br label %.loopexit" [mandelbrot-hls/mandelbrot.cpp:31]
+
+ <State 2> : 6.28ns
+ST_2 : Operation 67 [1/1] (0.00ns)   --->   "%y_assign = phi i10 [ 0, %0 ], [ %y, %.loopexit.loopexit ]"
+ST_2 : Operation 68 [1/1] (0.00ns)   --->   "%y_assign_cast3 = zext i10 %y_assign to i32" [mandelbrot-hls/mandelbrot.cpp:31]
+ST_2 : Operation 69 [1/1] (1.77ns)   --->   "%exitcond1 = icmp eq i10 %y_assign, -512" [mandelbrot-hls/mandelbrot.cpp:31]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.89> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 70 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 512, i64 512, i64 512) nounwind"
+ST_2 : Operation 71 [1/1] (1.95ns)   --->   "%y = add i10 %y_assign, 1" [mandelbrot-hls/mandelbrot.cpp:31]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.19> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 72 [1/1] (0.00ns)   --->   "br i1 %exitcond1, label %5, label %.preheader.preheader" [mandelbrot-hls/mandelbrot.cpp:31]
+ST_2 : Operation 73 [6/6] (6.28ns)   --->   "%tmp_i2 = sitofp i32 %y_assign_cast3 to double" [mandelbrot-hls/mandelbrot.cpp:11->mandelbrot-hls/mandelbrot.cpp:35]   --->   Core 116 'Int2Double' <Latency = 5> <II = 1> <Delay = 6.28> <FuncUnit> <Opcode : 'sitodp' 'uitodp'> <InPorts = 1> <OutPorts = 1>
+ST_2 : Operation 74 [1/1] (0.00ns)   --->   "ret void" [mandelbrot-hls/mandelbrot.cpp:44]
+
+ <State 3> : 6.28ns
+ST_3 : Operation 75 [5/6] (6.28ns)   --->   "%tmp_i2 = sitofp i32 %y_assign_cast3 to double" [mandelbrot-hls/mandelbrot.cpp:11->mandelbrot-hls/mandelbrot.cpp:35]   --->   Core 116 'Int2Double' <Latency = 5> <II = 1> <Delay = 6.28> <FuncUnit> <Opcode : 'sitodp' 'uitodp'> <InPorts = 1> <OutPorts = 1>
+
+ <State 4> : 6.28ns
+ST_4 : Operation 76 [4/6] (6.28ns)   --->   "%tmp_i2 = sitofp i32 %y_assign_cast3 to double" [mandelbrot-hls/mandelbrot.cpp:11->mandelbrot-hls/mandelbrot.cpp:35]   --->   Core 116 'Int2Double' <Latency = 5> <II = 1> <Delay = 6.28> <FuncUnit> <Opcode : 'sitodp' 'uitodp'> <InPorts = 1> <OutPorts = 1>
+
+ <State 5> : 6.28ns
+ST_5 : Operation 77 [3/6] (6.28ns)   --->   "%tmp_i2 = sitofp i32 %y_assign_cast3 to double" [mandelbrot-hls/mandelbrot.cpp:11->mandelbrot-hls/mandelbrot.cpp:35]   --->   Core 116 'Int2Double' <Latency = 5> <II = 1> <Delay = 6.28> <FuncUnit> <Opcode : 'sitodp' 'uitodp'> <InPorts = 1> <OutPorts = 1>
+
+ <State 6> : 6.28ns
+ST_6 : Operation 78 [2/6] (6.28ns)   --->   "%tmp_i2 = sitofp i32 %y_assign_cast3 to double" [mandelbrot-hls/mandelbrot.cpp:11->mandelbrot-hls/mandelbrot.cpp:35]   --->   Core 116 'Int2Double' <Latency = 5> <II = 1> <Delay = 6.28> <FuncUnit> <Opcode : 'sitodp' 'uitodp'> <InPorts = 1> <OutPorts = 1>
+
+ <State 7> : 6.28ns
+ST_7 : Operation 79 [1/6] (6.28ns)   --->   "%tmp_i2 = sitofp i32 %y_assign_cast3 to double" [mandelbrot-hls/mandelbrot.cpp:11->mandelbrot-hls/mandelbrot.cpp:35]   --->   Core 116 'Int2Double' <Latency = 5> <II = 1> <Delay = 6.28> <FuncUnit> <Opcode : 'sitodp' 'uitodp'> <InPorts = 1> <OutPorts = 1>
+
+ <State 8> : 7.79ns
+ST_8 : Operation 80 [6/6] (7.78ns)   --->   "%tmp_3_i = fmul double %tmp_i2, 3.906250e-03" [mandelbrot-hls/mandelbrot.cpp:11->mandelbrot-hls/mandelbrot.cpp:35]   --->   Core 110 'DMul' <Latency = 5> <II = 1> <Delay = 7.78> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+
+ <State 9> : 7.79ns
+ST_9 : Operation 81 [5/6] (7.78ns)   --->   "%tmp_3_i = fmul double %tmp_i2, 3.906250e-03" [mandelbrot-hls/mandelbrot.cpp:11->mandelbrot-hls/mandelbrot.cpp:35]   --->   Core 110 'DMul' <Latency = 5> <II = 1> <Delay = 7.78> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+
+ <State 10> : 7.79ns
+ST_10 : Operation 82 [4/6] (7.78ns)   --->   "%tmp_3_i = fmul double %tmp_i2, 3.906250e-03" [mandelbrot-hls/mandelbrot.cpp:11->mandelbrot-hls/mandelbrot.cpp:35]   --->   Core 110 'DMul' <Latency = 5> <II = 1> <Delay = 7.78> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+
+ <State 11> : 7.79ns
+ST_11 : Operation 83 [3/6] (7.78ns)   --->   "%tmp_3_i = fmul double %tmp_i2, 3.906250e-03" [mandelbrot-hls/mandelbrot.cpp:11->mandelbrot-hls/mandelbrot.cpp:35]   --->   Core 110 'DMul' <Latency = 5> <II = 1> <Delay = 7.78> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+
+ <State 12> : 7.79ns
+ST_12 : Operation 84 [2/6] (7.78ns)   --->   "%tmp_3_i = fmul double %tmp_i2, 3.906250e-03" [mandelbrot-hls/mandelbrot.cpp:11->mandelbrot-hls/mandelbrot.cpp:35]   --->   Core 110 'DMul' <Latency = 5> <II = 1> <Delay = 7.78> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+
+ <State 13> : 7.79ns
+ST_13 : Operation 85 [1/6] (7.78ns)   --->   "%tmp_3_i = fmul double %tmp_i2, 3.906250e-03" [mandelbrot-hls/mandelbrot.cpp:11->mandelbrot-hls/mandelbrot.cpp:35]   --->   Core 110 'DMul' <Latency = 5> <II = 1> <Delay = 7.78> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+
+ <State 14> : 8.23ns
+ST_14 : Operation 86 [5/5] (8.23ns)   --->   "%ci = fadd double %tmp_3_i, -1.000000e+00" [mandelbrot-hls/mandelbrot.cpp:11->mandelbrot-hls/mandelbrot.cpp:35]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 8.23> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+
+ <State 15> : 8.23ns
+ST_15 : Operation 87 [4/5] (8.23ns)   --->   "%ci = fadd double %tmp_3_i, -1.000000e+00" [mandelbrot-hls/mandelbrot.cpp:11->mandelbrot-hls/mandelbrot.cpp:35]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 8.23> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+
+ <State 16> : 8.23ns
+ST_16 : Operation 88 [3/5] (8.23ns)   --->   "%ci = fadd double %tmp_3_i, -1.000000e+00" [mandelbrot-hls/mandelbrot.cpp:11->mandelbrot-hls/mandelbrot.cpp:35]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 8.23> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+
+ <State 17> : 8.23ns
+ST_17 : Operation 89 [2/5] (8.23ns)   --->   "%ci = fadd double %tmp_3_i, -1.000000e+00" [mandelbrot-hls/mandelbrot.cpp:11->mandelbrot-hls/mandelbrot.cpp:35]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 8.23> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+
+ <State 18> : 8.23ns
+ST_18 : Operation 90 [1/1] (0.00ns)   --->   "%tmp_cast = zext i10 %y_assign to i21" [mandelbrot-hls/mandelbrot.cpp:11->mandelbrot-hls/mandelbrot.cpp:35]
+ST_18 : Operation 91 [1/5] (8.23ns)   --->   "%ci = fadd double %tmp_3_i, -1.000000e+00" [mandelbrot-hls/mandelbrot.cpp:11->mandelbrot-hls/mandelbrot.cpp:35]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 8.23> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+ST_18 : Operation 92 [1/1] (1.76ns)   --->   "br label %.preheader" [mandelbrot-hls/mandelbrot.cpp:32]
+
+ <State 19> : 6.28ns
+ST_19 : Operation 93 [1/1] (0.00ns)   --->   "%x_assign = phi i11 [ %x, %findmandelbrot.exit ], [ 0, %.preheader.preheader ]"
+ST_19 : Operation 94 [1/1] (0.00ns)   --->   "%x_assign_cast2 = zext i11 %x_assign to i32" [mandelbrot-hls/mandelbrot.cpp:32]
+ST_19 : Operation 95 [1/1] (1.88ns)   --->   "%exitcond = icmp eq i11 %x_assign, -1024" [mandelbrot-hls/mandelbrot.cpp:32]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.89> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_19 : Operation 96 [1/1] (0.00ns)   --->   "%empty_4 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 1024, i64 1024, i64 1024) nounwind"
+ST_19 : Operation 97 [1/1] (1.97ns)   --->   "%x = add i11 %x_assign, 1" [mandelbrot-hls/mandelbrot.cpp:32]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.19> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_19 : Operation 98 [1/1] (0.00ns)   --->   "br i1 %exitcond, label %.loopexit.loopexit, label %1" [mandelbrot-hls/mandelbrot.cpp:32]
+ST_19 : Operation 99 [6/6] (6.28ns)   --->   "%tmp_i = sitofp i32 %x_assign_cast2 to double" [mandelbrot-hls/mandelbrot.cpp:6->mandelbrot-hls/mandelbrot.cpp:34]   --->   Core 116 'Int2Double' <Latency = 5> <II = 1> <Delay = 6.28> <FuncUnit> <Opcode : 'sitodp' 'uitodp'> <InPorts = 1> <OutPorts = 1>
+ST_19 : Operation 100 [1/1] (0.00ns)   --->   "br label %.loopexit"
+
+ <State 20> : 6.28ns
+ST_20 : Operation 101 [5/6] (6.28ns)   --->   "%tmp_i = sitofp i32 %x_assign_cast2 to double" [mandelbrot-hls/mandelbrot.cpp:6->mandelbrot-hls/mandelbrot.cpp:34]   --->   Core 116 'Int2Double' <Latency = 5> <II = 1> <Delay = 6.28> <FuncUnit> <Opcode : 'sitodp' 'uitodp'> <InPorts = 1> <OutPorts = 1>
+
+ <State 21> : 6.28ns
+ST_21 : Operation 102 [4/6] (6.28ns)   --->   "%tmp_i = sitofp i32 %x_assign_cast2 to double" [mandelbrot-hls/mandelbrot.cpp:6->mandelbrot-hls/mandelbrot.cpp:34]   --->   Core 116 'Int2Double' <Latency = 5> <II = 1> <Delay = 6.28> <FuncUnit> <Opcode : 'sitodp' 'uitodp'> <InPorts = 1> <OutPorts = 1>
+
+ <State 22> : 6.28ns
+ST_22 : Operation 103 [3/6] (6.28ns)   --->   "%tmp_i = sitofp i32 %x_assign_cast2 to double" [mandelbrot-hls/mandelbrot.cpp:6->mandelbrot-hls/mandelbrot.cpp:34]   --->   Core 116 'Int2Double' <Latency = 5> <II = 1> <Delay = 6.28> <FuncUnit> <Opcode : 'sitodp' 'uitodp'> <InPorts = 1> <OutPorts = 1>
+
+ <State 23> : 6.28ns
+ST_23 : Operation 104 [2/6] (6.28ns)   --->   "%tmp_i = sitofp i32 %x_assign_cast2 to double" [mandelbrot-hls/mandelbrot.cpp:6->mandelbrot-hls/mandelbrot.cpp:34]   --->   Core 116 'Int2Double' <Latency = 5> <II = 1> <Delay = 6.28> <FuncUnit> <Opcode : 'sitodp' 'uitodp'> <InPorts = 1> <OutPorts = 1>
+
+ <State 24> : 6.28ns
+ST_24 : Operation 105 [1/6] (6.28ns)   --->   "%tmp_i = sitofp i32 %x_assign_cast2 to double" [mandelbrot-hls/mandelbrot.cpp:6->mandelbrot-hls/mandelbrot.cpp:34]   --->   Core 116 'Int2Double' <Latency = 5> <II = 1> <Delay = 6.28> <FuncUnit> <Opcode : 'sitodp' 'uitodp'> <InPorts = 1> <OutPorts = 1>
+
+ <State 25> : 7.79ns
+ST_25 : Operation 106 [6/6] (7.78ns)   --->   "%tmp_1_i = fmul double %tmp_i, 3.906250e-03" [mandelbrot-hls/mandelbrot.cpp:6->mandelbrot-hls/mandelbrot.cpp:34]   --->   Core 110 'DMul' <Latency = 5> <II = 1> <Delay = 7.78> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+
+ <State 26> : 7.79ns
+ST_26 : Operation 107 [5/6] (7.78ns)   --->   "%tmp_1_i = fmul double %tmp_i, 3.906250e-03" [mandelbrot-hls/mandelbrot.cpp:6->mandelbrot-hls/mandelbrot.cpp:34]   --->   Core 110 'DMul' <Latency = 5> <II = 1> <Delay = 7.78> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+
+ <State 27> : 7.79ns
+ST_27 : Operation 108 [4/6] (7.78ns)   --->   "%tmp_1_i = fmul double %tmp_i, 3.906250e-03" [mandelbrot-hls/mandelbrot.cpp:6->mandelbrot-hls/mandelbrot.cpp:34]   --->   Core 110 'DMul' <Latency = 5> <II = 1> <Delay = 7.78> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+
+ <State 28> : 7.79ns
+ST_28 : Operation 109 [3/6] (7.78ns)   --->   "%tmp_1_i = fmul double %tmp_i, 3.906250e-03" [mandelbrot-hls/mandelbrot.cpp:6->mandelbrot-hls/mandelbrot.cpp:34]   --->   Core 110 'DMul' <Latency = 5> <II = 1> <Delay = 7.78> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+
+ <State 29> : 7.79ns
+ST_29 : Operation 110 [2/6] (7.78ns)   --->   "%tmp_1_i = fmul double %tmp_i, 3.906250e-03" [mandelbrot-hls/mandelbrot.cpp:6->mandelbrot-hls/mandelbrot.cpp:34]   --->   Core 110 'DMul' <Latency = 5> <II = 1> <Delay = 7.78> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+
+ <State 30> : 7.79ns
+ST_30 : Operation 111 [1/6] (7.78ns)   --->   "%tmp_1_i = fmul double %tmp_i, 3.906250e-03" [mandelbrot-hls/mandelbrot.cpp:6->mandelbrot-hls/mandelbrot.cpp:34]   --->   Core 110 'DMul' <Latency = 5> <II = 1> <Delay = 7.78> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+
+ <State 31> : 8.23ns
+ST_31 : Operation 112 [5/5] (8.23ns)   --->   "%cr = fadd double %tmp_1_i, -2.500000e+00" [mandelbrot-hls/mandelbrot.cpp:6->mandelbrot-hls/mandelbrot.cpp:34]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 8.23> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+
+ <State 32> : 8.23ns
+ST_32 : Operation 113 [4/5] (8.23ns)   --->   "%cr = fadd double %tmp_1_i, -2.500000e+00" [mandelbrot-hls/mandelbrot.cpp:6->mandelbrot-hls/mandelbrot.cpp:34]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 8.23> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+
+ <State 33> : 8.23ns
+ST_33 : Operation 114 [3/5] (8.23ns)   --->   "%cr = fadd double %tmp_1_i, -2.500000e+00" [mandelbrot-hls/mandelbrot.cpp:6->mandelbrot-hls/mandelbrot.cpp:34]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 8.23> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+
+ <State 34> : 8.23ns
+ST_34 : Operation 115 [2/5] (8.23ns)   --->   "%cr = fadd double %tmp_1_i, -2.500000e+00" [mandelbrot-hls/mandelbrot.cpp:6->mandelbrot-hls/mandelbrot.cpp:34]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 8.23> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+
+ <State 35> : 8.23ns
+ST_35 : Operation 116 [1/5] (8.23ns)   --->   "%cr = fadd double %tmp_1_i, -2.500000e+00" [mandelbrot-hls/mandelbrot.cpp:6->mandelbrot-hls/mandelbrot.cpp:34]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 8.23> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+ST_35 : Operation 117 [1/1] (1.76ns)   --->   "br label %2" [mandelbrot-hls/mandelbrot.cpp:18->mandelbrot-hls/mandelbrot.cpp:38]
+
+ <State 36> : 7.79ns
+ST_36 : Operation 118 [1/1] (0.00ns)   --->   "%n = phi i10 [ 0, %1 ], [ %i, %4 ]"
+ST_36 : Operation 119 [1/1] (0.00ns)   --->   "%zr_i = phi double [ 0.000000e+00, %1 ], [ %temp, %4 ]"
+ST_36 : Operation 120 [1/1] (0.00ns)   --->   "%zi_i = phi double [ 0.000000e+00, %1 ], [ %zi, %4 ]"
+ST_36 : Operation 121 [1/1] (0.00ns)   --->   "%tmp = call i1 @_ssdm_op_BitSelect.i1.i10.i32(i10 %n, i32 9)" [mandelbrot-hls/mandelbrot.cpp:18->mandelbrot-hls/mandelbrot.cpp:38]
+ST_36 : Operation 122 [1/1] (0.00ns)   --->   "%empty_5 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 1, i64 512, i64 256) nounwind"
+ST_36 : Operation 123 [1/1] (1.95ns)   --->   "%i = add i10 %n, 1" [mandelbrot-hls/mandelbrot.cpp:22->mandelbrot-hls/mandelbrot.cpp:38]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.19> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_36 : Operation 124 [1/1] (0.00ns)   --->   "br i1 %tmp, label %findmandelbrot.exit, label %3" [mandelbrot-hls/mandelbrot.cpp:18->mandelbrot-hls/mandelbrot.cpp:38]
+ST_36 : Operation 125 [6/6] (7.78ns)   --->   "%tmp_9_i = fmul double %zr_i, %zr_i" [mandelbrot-hls/mandelbrot.cpp:18->mandelbrot-hls/mandelbrot.cpp:38]   --->   Core 110 'DMul' <Latency = 5> <II = 1> <Delay = 7.78> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+ST_36 : Operation 126 [6/6] (7.78ns)   --->   "%tmp_i_6 = fmul double %zi_i, %zi_i" [mandelbrot-hls/mandelbrot.cpp:18->mandelbrot-hls/mandelbrot.cpp:38]   --->   Core 110 'DMul' <Latency = 5> <II = 1> <Delay = 7.78> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+
+ <State 37> : 7.79ns
+ST_37 : Operation 127 [5/6] (7.78ns)   --->   "%tmp_9_i = fmul double %zr_i, %zr_i" [mandelbrot-hls/mandelbrot.cpp:18->mandelbrot-hls/mandelbrot.cpp:38]   --->   Core 110 'DMul' <Latency = 5> <II = 1> <Delay = 7.78> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+ST_37 : Operation 128 [5/6] (7.78ns)   --->   "%tmp_i_6 = fmul double %zi_i, %zi_i" [mandelbrot-hls/mandelbrot.cpp:18->mandelbrot-hls/mandelbrot.cpp:38]   --->   Core 110 'DMul' <Latency = 5> <II = 1> <Delay = 7.78> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+
+ <State 38> : 7.79ns
+ST_38 : Operation 129 [4/6] (7.78ns)   --->   "%tmp_9_i = fmul double %zr_i, %zr_i" [mandelbrot-hls/mandelbrot.cpp:18->mandelbrot-hls/mandelbrot.cpp:38]   --->   Core 110 'DMul' <Latency = 5> <II = 1> <Delay = 7.78> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+ST_38 : Operation 130 [4/6] (7.78ns)   --->   "%tmp_i_6 = fmul double %zi_i, %zi_i" [mandelbrot-hls/mandelbrot.cpp:18->mandelbrot-hls/mandelbrot.cpp:38]   --->   Core 110 'DMul' <Latency = 5> <II = 1> <Delay = 7.78> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+
+ <State 39> : 7.79ns
+ST_39 : Operation 131 [3/6] (7.78ns)   --->   "%tmp_9_i = fmul double %zr_i, %zr_i" [mandelbrot-hls/mandelbrot.cpp:18->mandelbrot-hls/mandelbrot.cpp:38]   --->   Core 110 'DMul' <Latency = 5> <II = 1> <Delay = 7.78> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+ST_39 : Operation 132 [3/6] (7.78ns)   --->   "%tmp_i_6 = fmul double %zi_i, %zi_i" [mandelbrot-hls/mandelbrot.cpp:18->mandelbrot-hls/mandelbrot.cpp:38]   --->   Core 110 'DMul' <Latency = 5> <II = 1> <Delay = 7.78> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+
+ <State 40> : 7.79ns
+ST_40 : Operation 133 [2/6] (7.78ns)   --->   "%tmp_9_i = fmul double %zr_i, %zr_i" [mandelbrot-hls/mandelbrot.cpp:18->mandelbrot-hls/mandelbrot.cpp:38]   --->   Core 110 'DMul' <Latency = 5> <II = 1> <Delay = 7.78> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+ST_40 : Operation 134 [2/6] (7.78ns)   --->   "%tmp_i_6 = fmul double %zi_i, %zi_i" [mandelbrot-hls/mandelbrot.cpp:18->mandelbrot-hls/mandelbrot.cpp:38]   --->   Core 110 'DMul' <Latency = 5> <II = 1> <Delay = 7.78> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+
+ <State 41> : 7.79ns
+ST_41 : Operation 135 [1/6] (7.78ns)   --->   "%tmp_9_i = fmul double %zr_i, %zr_i" [mandelbrot-hls/mandelbrot.cpp:18->mandelbrot-hls/mandelbrot.cpp:38]   --->   Core 110 'DMul' <Latency = 5> <II = 1> <Delay = 7.78> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+ST_41 : Operation 136 [1/6] (7.78ns)   --->   "%tmp_i_6 = fmul double %zi_i, %zi_i" [mandelbrot-hls/mandelbrot.cpp:18->mandelbrot-hls/mandelbrot.cpp:38]   --->   Core 110 'DMul' <Latency = 5> <II = 1> <Delay = 7.78> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+
+ <State 42> : 8.23ns
+ST_42 : Operation 137 [5/5] (8.23ns)   --->   "%tmp_1_i4 = fadd double %tmp_9_i, %tmp_i_6" [mandelbrot-hls/mandelbrot.cpp:18->mandelbrot-hls/mandelbrot.cpp:38]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 8.23> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+
+ <State 43> : 8.23ns
+ST_43 : Operation 138 [4/5] (8.23ns)   --->   "%tmp_1_i4 = fadd double %tmp_9_i, %tmp_i_6" [mandelbrot-hls/mandelbrot.cpp:18->mandelbrot-hls/mandelbrot.cpp:38]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 8.23> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+
+ <State 44> : 8.23ns
+ST_44 : Operation 139 [3/5] (8.23ns)   --->   "%tmp_1_i4 = fadd double %tmp_9_i, %tmp_i_6" [mandelbrot-hls/mandelbrot.cpp:18->mandelbrot-hls/mandelbrot.cpp:38]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 8.23> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+
+ <State 45> : 8.23ns
+ST_45 : Operation 140 [2/5] (8.23ns)   --->   "%tmp_1_i4 = fadd double %tmp_9_i, %tmp_i_6" [mandelbrot-hls/mandelbrot.cpp:18->mandelbrot-hls/mandelbrot.cpp:38]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 8.23> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+
+ <State 46> : 8.23ns
+ST_46 : Operation 141 [1/5] (8.23ns)   --->   "%tmp_1_i4 = fadd double %tmp_9_i, %tmp_i_6" [mandelbrot-hls/mandelbrot.cpp:18->mandelbrot-hls/mandelbrot.cpp:38]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 8.23> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+
+ <State 47> : 8.23ns
+ST_47 : Operation 142 [1/1] (0.00ns)   --->   "%tmp_1_i4_to_int = bitcast double %tmp_1_i4 to i64" [mandelbrot-hls/mandelbrot.cpp:18->mandelbrot-hls/mandelbrot.cpp:38]
+ST_47 : Operation 143 [1/1] (0.00ns)   --->   "%tmp_1 = call i11 @_ssdm_op_PartSelect.i11.i64.i32.i32(i64 %tmp_1_i4_to_int, i32 52, i32 62)" [mandelbrot-hls/mandelbrot.cpp:18->mandelbrot-hls/mandelbrot.cpp:38]
+ST_47 : Operation 144 [1/1] (0.00ns)   --->   "%tmp_2 = trunc i64 %tmp_1_i4_to_int to i52" [mandelbrot-hls/mandelbrot.cpp:18->mandelbrot-hls/mandelbrot.cpp:38]
+ST_47 : Operation 145 [1/1] (1.88ns)   --->   "%notlhs = icmp ne i11 %tmp_1, -1" [mandelbrot-hls/mandelbrot.cpp:18->mandelbrot-hls/mandelbrot.cpp:38]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.89> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_47 : Operation 146 [1/1] (2.89ns)   --->   "%notrhs = icmp eq i52 %tmp_2, 0" [mandelbrot-hls/mandelbrot.cpp:18->mandelbrot-hls/mandelbrot.cpp:38]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.89> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_47 : Operation 147 [1/1] (0.00ns) (grouped into LUT with out node tmp_5)   --->   "%tmp_3 = or i1 %notrhs, %notlhs" [mandelbrot-hls/mandelbrot.cpp:18->mandelbrot-hls/mandelbrot.cpp:38]   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.93> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_47 : Operation 148 [1/1] (6.82ns)   --->   "%tmp_4 = fcmp olt double %tmp_1_i4, 4.000000e+00" [mandelbrot-hls/mandelbrot.cpp:18->mandelbrot-hls/mandelbrot.cpp:38]   --->   Core 114 'DCmp' <Latency = 0> <II = 1> <Delay = 6.82> <FuncUnit> <Opcode : 'dcmp'> <InPorts = 2> <OutPorts = 1>
+ST_47 : Operation 149 [1/1] (0.93ns) (out node of the LUT)   --->   "%tmp_5 = and i1 %tmp_3, %tmp_4" [mandelbrot-hls/mandelbrot.cpp:18->mandelbrot-hls/mandelbrot.cpp:38]   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.93> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_47 : Operation 150 [1/1] (0.00ns)   --->   "br i1 %tmp_5, label %4, label %findmandelbrot.exit" [mandelbrot-hls/mandelbrot.cpp:18->mandelbrot-hls/mandelbrot.cpp:38]
+ST_47 : Operation 151 [5/5] (8.23ns)   --->   "%tmp_3_i6 = fsub double %tmp_9_i, %tmp_i_6" [mandelbrot-hls/mandelbrot.cpp:19->mandelbrot-hls/mandelbrot.cpp:38]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 8.23> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+ST_47 : Operation 152 [6/6] (7.78ns)   --->   "%tmp_4_i7 = fmul double %zr_i, 2.000000e+00" [mandelbrot-hls/mandelbrot.cpp:20->mandelbrot-hls/mandelbrot.cpp:38]   --->   Core 110 'DMul' <Latency = 5> <II = 1> <Delay = 7.78> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+ST_47 : Operation 153 [1/1] (0.00ns)   --->   "%tmp_7 = trunc i10 %n to i8" [mandelbrot-hls/mandelbrot.cpp:18->mandelbrot-hls/mandelbrot.cpp:38]
+ST_47 : Operation 154 [1/1] (0.00ns)   --->   "%tmp_6_cast = zext i8 %tmp_7 to i32" [mandelbrot-hls/mandelbrot.cpp:41]
+ST_47 : Operation 155 [1/1] (0.00ns)   --->   "%tmp_6 = call i20 @_ssdm_op_BitConcatenate.i20.i11.i9(i11 %x_assign, i9 0)" [mandelbrot-hls/mandelbrot.cpp:32]
+ST_47 : Operation 156 [1/1] (0.00ns)   --->   "%tmp_7_cast = zext i20 %tmp_6 to i21" [mandelbrot-hls/mandelbrot.cpp:41]
+ST_47 : Operation 157 [1/1] (2.19ns)   --->   "%tmp_8 = add i21 %tmp_7_cast, %tmp_cast" [mandelbrot-hls/mandelbrot.cpp:41]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.19> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_47 : Operation 158 [1/1] (0.00ns)   --->   "%tmp_8_cast = zext i21 %tmp_8 to i64" [mandelbrot-hls/mandelbrot.cpp:41]
+ST_47 : Operation 159 [1/1] (0.00ns)   --->   "%res_addr = getelementptr [524288 x i32]* %res, i64 0, i64 %tmp_8_cast" [mandelbrot-hls/mandelbrot.cpp:41]
+ST_47 : Operation 160 [1/1] (3.25ns)   --->   "store i32 %tmp_6_cast, i32* %res_addr, align 4" [mandelbrot-hls/mandelbrot.cpp:41]   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 524288> <RAM>
+ST_47 : Operation 161 [1/1] (0.00ns)   --->   "br label %.preheader" [mandelbrot-hls/mandelbrot.cpp:32]
+
+ <State 48> : 8.23ns
+ST_48 : Operation 162 [4/5] (8.23ns)   --->   "%tmp_3_i6 = fsub double %tmp_9_i, %tmp_i_6" [mandelbrot-hls/mandelbrot.cpp:19->mandelbrot-hls/mandelbrot.cpp:38]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 8.23> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+ST_48 : Operation 163 [5/6] (7.78ns)   --->   "%tmp_4_i7 = fmul double %zr_i, 2.000000e+00" [mandelbrot-hls/mandelbrot.cpp:20->mandelbrot-hls/mandelbrot.cpp:38]   --->   Core 110 'DMul' <Latency = 5> <II = 1> <Delay = 7.78> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+
+ <State 49> : 8.23ns
+ST_49 : Operation 164 [3/5] (8.23ns)   --->   "%tmp_3_i6 = fsub double %tmp_9_i, %tmp_i_6" [mandelbrot-hls/mandelbrot.cpp:19->mandelbrot-hls/mandelbrot.cpp:38]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 8.23> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+ST_49 : Operation 165 [4/6] (7.78ns)   --->   "%tmp_4_i7 = fmul double %zr_i, 2.000000e+00" [mandelbrot-hls/mandelbrot.cpp:20->mandelbrot-hls/mandelbrot.cpp:38]   --->   Core 110 'DMul' <Latency = 5> <II = 1> <Delay = 7.78> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+
+ <State 50> : 8.23ns
+ST_50 : Operation 166 [2/5] (8.23ns)   --->   "%tmp_3_i6 = fsub double %tmp_9_i, %tmp_i_6" [mandelbrot-hls/mandelbrot.cpp:19->mandelbrot-hls/mandelbrot.cpp:38]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 8.23> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+ST_50 : Operation 167 [3/6] (7.78ns)   --->   "%tmp_4_i7 = fmul double %zr_i, 2.000000e+00" [mandelbrot-hls/mandelbrot.cpp:20->mandelbrot-hls/mandelbrot.cpp:38]   --->   Core 110 'DMul' <Latency = 5> <II = 1> <Delay = 7.78> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+
+ <State 51> : 8.23ns
+ST_51 : Operation 168 [1/5] (8.23ns)   --->   "%tmp_3_i6 = fsub double %tmp_9_i, %tmp_i_6" [mandelbrot-hls/mandelbrot.cpp:19->mandelbrot-hls/mandelbrot.cpp:38]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 8.23> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+ST_51 : Operation 169 [2/6] (7.78ns)   --->   "%tmp_4_i7 = fmul double %zr_i, 2.000000e+00" [mandelbrot-hls/mandelbrot.cpp:20->mandelbrot-hls/mandelbrot.cpp:38]   --->   Core 110 'DMul' <Latency = 5> <II = 1> <Delay = 7.78> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+
+ <State 52> : 8.23ns
+ST_52 : Operation 170 [5/5] (8.23ns)   --->   "%temp = fadd double %tmp_3_i6, %cr" [mandelbrot-hls/mandelbrot.cpp:19->mandelbrot-hls/mandelbrot.cpp:38]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 8.23> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+ST_52 : Operation 171 [1/6] (7.78ns)   --->   "%tmp_4_i7 = fmul double %zr_i, 2.000000e+00" [mandelbrot-hls/mandelbrot.cpp:20->mandelbrot-hls/mandelbrot.cpp:38]   --->   Core 110 'DMul' <Latency = 5> <II = 1> <Delay = 7.78> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+
+ <State 53> : 8.23ns
+ST_53 : Operation 172 [4/5] (8.23ns)   --->   "%temp = fadd double %tmp_3_i6, %cr" [mandelbrot-hls/mandelbrot.cpp:19->mandelbrot-hls/mandelbrot.cpp:38]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 8.23> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+ST_53 : Operation 173 [6/6] (7.78ns)   --->   "%tmp_5_i = fmul double %tmp_4_i7, %zi_i" [mandelbrot-hls/mandelbrot.cpp:20->mandelbrot-hls/mandelbrot.cpp:38]   --->   Core 110 'DMul' <Latency = 5> <II = 1> <Delay = 7.78> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+
+ <State 54> : 8.23ns
+ST_54 : Operation 174 [3/5] (8.23ns)   --->   "%temp = fadd double %tmp_3_i6, %cr" [mandelbrot-hls/mandelbrot.cpp:19->mandelbrot-hls/mandelbrot.cpp:38]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 8.23> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+ST_54 : Operation 175 [5/6] (7.78ns)   --->   "%tmp_5_i = fmul double %tmp_4_i7, %zi_i" [mandelbrot-hls/mandelbrot.cpp:20->mandelbrot-hls/mandelbrot.cpp:38]   --->   Core 110 'DMul' <Latency = 5> <II = 1> <Delay = 7.78> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+
+ <State 55> : 8.23ns
+ST_55 : Operation 176 [2/5] (8.23ns)   --->   "%temp = fadd double %tmp_3_i6, %cr" [mandelbrot-hls/mandelbrot.cpp:19->mandelbrot-hls/mandelbrot.cpp:38]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 8.23> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+ST_55 : Operation 177 [4/6] (7.78ns)   --->   "%tmp_5_i = fmul double %tmp_4_i7, %zi_i" [mandelbrot-hls/mandelbrot.cpp:20->mandelbrot-hls/mandelbrot.cpp:38]   --->   Core 110 'DMul' <Latency = 5> <II = 1> <Delay = 7.78> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+
+ <State 56> : 8.23ns
+ST_56 : Operation 178 [1/5] (8.23ns)   --->   "%temp = fadd double %tmp_3_i6, %cr" [mandelbrot-hls/mandelbrot.cpp:19->mandelbrot-hls/mandelbrot.cpp:38]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 8.23> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+ST_56 : Operation 179 [3/6] (7.78ns)   --->   "%tmp_5_i = fmul double %tmp_4_i7, %zi_i" [mandelbrot-hls/mandelbrot.cpp:20->mandelbrot-hls/mandelbrot.cpp:38]   --->   Core 110 'DMul' <Latency = 5> <II = 1> <Delay = 7.78> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+
+ <State 57> : 7.79ns
+ST_57 : Operation 180 [2/6] (7.78ns)   --->   "%tmp_5_i = fmul double %tmp_4_i7, %zi_i" [mandelbrot-hls/mandelbrot.cpp:20->mandelbrot-hls/mandelbrot.cpp:38]   --->   Core 110 'DMul' <Latency = 5> <II = 1> <Delay = 7.78> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+
+ <State 58> : 7.79ns
+ST_58 : Operation 181 [1/6] (7.78ns)   --->   "%tmp_5_i = fmul double %tmp_4_i7, %zi_i" [mandelbrot-hls/mandelbrot.cpp:20->mandelbrot-hls/mandelbrot.cpp:38]   --->   Core 110 'DMul' <Latency = 5> <II = 1> <Delay = 7.78> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+
+ <State 59> : 8.23ns
+ST_59 : Operation 182 [5/5] (8.23ns)   --->   "%zi = fadd double %tmp_5_i, %ci" [mandelbrot-hls/mandelbrot.cpp:20->mandelbrot-hls/mandelbrot.cpp:38]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 8.23> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+
+ <State 60> : 8.23ns
+ST_60 : Operation 183 [4/5] (8.23ns)   --->   "%zi = fadd double %tmp_5_i, %ci" [mandelbrot-hls/mandelbrot.cpp:20->mandelbrot-hls/mandelbrot.cpp:38]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 8.23> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+
+ <State 61> : 8.23ns
+ST_61 : Operation 184 [3/5] (8.23ns)   --->   "%zi = fadd double %tmp_5_i, %ci" [mandelbrot-hls/mandelbrot.cpp:20->mandelbrot-hls/mandelbrot.cpp:38]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 8.23> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+
+ <State 62> : 8.23ns
+ST_62 : Operation 185 [2/5] (8.23ns)   --->   "%zi = fadd double %tmp_5_i, %ci" [mandelbrot-hls/mandelbrot.cpp:20->mandelbrot-hls/mandelbrot.cpp:38]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 8.23> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+
+ <State 63> : 8.23ns
+ST_63 : Operation 186 [1/5] (8.23ns)   --->   "%zi = fadd double %tmp_5_i, %ci" [mandelbrot-hls/mandelbrot.cpp:20->mandelbrot-hls/mandelbrot.cpp:38]   --->   Core 109 'DAddSub' <Latency = 4> <II = 1> <Delay = 8.23> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+ST_63 : Operation 187 [1/1] (0.00ns)   --->   "br label %2" [mandelbrot-hls/mandelbrot.cpp:23->mandelbrot-hls/mandelbrot.cpp:38]
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 1.77ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('y') with incoming values : ('y', mandelbrot-hls/mandelbrot.cpp:31) [6]  (1.77 ns)
+
+ <State 2>: 6.28ns
+The critical path consists of the following:
+	'phi' operation ('y') with incoming values : ('y', mandelbrot-hls/mandelbrot.cpp:31) [6]  (0 ns)
+	'sitodp' operation ('tmp_i2', mandelbrot-hls/mandelbrot.cpp:11->mandelbrot-hls/mandelbrot.cpp:35) [14]  (6.28 ns)
+
+ <State 3>: 6.28ns
+The critical path consists of the following:
+	'sitodp' operation ('tmp_i2', mandelbrot-hls/mandelbrot.cpp:11->mandelbrot-hls/mandelbrot.cpp:35) [14]  (6.28 ns)
+
+ <State 4>: 6.28ns
+The critical path consists of the following:
+	'sitodp' operation ('tmp_i2', mandelbrot-hls/mandelbrot.cpp:11->mandelbrot-hls/mandelbrot.cpp:35) [14]  (6.28 ns)
+
+ <State 5>: 6.28ns
+The critical path consists of the following:
+	'sitodp' operation ('tmp_i2', mandelbrot-hls/mandelbrot.cpp:11->mandelbrot-hls/mandelbrot.cpp:35) [14]  (6.28 ns)
+
+ <State 6>: 6.28ns
+The critical path consists of the following:
+	'sitodp' operation ('tmp_i2', mandelbrot-hls/mandelbrot.cpp:11->mandelbrot-hls/mandelbrot.cpp:35) [14]  (6.28 ns)
+
+ <State 7>: 6.28ns
+The critical path consists of the following:
+	'sitodp' operation ('tmp_i2', mandelbrot-hls/mandelbrot.cpp:11->mandelbrot-hls/mandelbrot.cpp:35) [14]  (6.28 ns)
+
+ <State 8>: 7.79ns
+The critical path consists of the following:
+	'dmul' operation ('tmp_3_i', mandelbrot-hls/mandelbrot.cpp:11->mandelbrot-hls/mandelbrot.cpp:35) [15]  (7.79 ns)
+
+ <State 9>: 7.79ns
+The critical path consists of the following:
+	'dmul' operation ('tmp_3_i', mandelbrot-hls/mandelbrot.cpp:11->mandelbrot-hls/mandelbrot.cpp:35) [15]  (7.79 ns)
+
+ <State 10>: 7.79ns
+The critical path consists of the following:
+	'dmul' operation ('tmp_3_i', mandelbrot-hls/mandelbrot.cpp:11->mandelbrot-hls/mandelbrot.cpp:35) [15]  (7.79 ns)
+
+ <State 11>: 7.79ns
+The critical path consists of the following:
+	'dmul' operation ('tmp_3_i', mandelbrot-hls/mandelbrot.cpp:11->mandelbrot-hls/mandelbrot.cpp:35) [15]  (7.79 ns)
+
+ <State 12>: 7.79ns
+The critical path consists of the following:
+	'dmul' operation ('tmp_3_i', mandelbrot-hls/mandelbrot.cpp:11->mandelbrot-hls/mandelbrot.cpp:35) [15]  (7.79 ns)
+
+ <State 13>: 7.79ns
+The critical path consists of the following:
+	'dmul' operation ('tmp_3_i', mandelbrot-hls/mandelbrot.cpp:11->mandelbrot-hls/mandelbrot.cpp:35) [15]  (7.79 ns)
+
+ <State 14>: 8.23ns
+The critical path consists of the following:
+	'dadd' operation ('ci', mandelbrot-hls/mandelbrot.cpp:11->mandelbrot-hls/mandelbrot.cpp:35) [16]  (8.23 ns)
+
+ <State 15>: 8.23ns
+The critical path consists of the following:
+	'dadd' operation ('ci', mandelbrot-hls/mandelbrot.cpp:11->mandelbrot-hls/mandelbrot.cpp:35) [16]  (8.23 ns)
+
+ <State 16>: 8.23ns
+The critical path consists of the following:
+	'dadd' operation ('ci', mandelbrot-hls/mandelbrot.cpp:11->mandelbrot-hls/mandelbrot.cpp:35) [16]  (8.23 ns)
+
+ <State 17>: 8.23ns
+The critical path consists of the following:
+	'dadd' operation ('ci', mandelbrot-hls/mandelbrot.cpp:11->mandelbrot-hls/mandelbrot.cpp:35) [16]  (8.23 ns)
+
+ <State 18>: 8.23ns
+The critical path consists of the following:
+	'dadd' operation ('ci', mandelbrot-hls/mandelbrot.cpp:11->mandelbrot-hls/mandelbrot.cpp:35) [16]  (8.23 ns)
+
+ <State 19>: 6.28ns
+The critical path consists of the following:
+	'phi' operation ('x') with incoming values : ('x', mandelbrot-hls/mandelbrot.cpp:32) [19]  (0 ns)
+	'sitodp' operation ('tmp_i', mandelbrot-hls/mandelbrot.cpp:6->mandelbrot-hls/mandelbrot.cpp:34) [26]  (6.28 ns)
+
+ <State 20>: 6.28ns
+The critical path consists of the following:
+	'sitodp' operation ('tmp_i', mandelbrot-hls/mandelbrot.cpp:6->mandelbrot-hls/mandelbrot.cpp:34) [26]  (6.28 ns)
+
+ <State 21>: 6.28ns
+The critical path consists of the following:
+	'sitodp' operation ('tmp_i', mandelbrot-hls/mandelbrot.cpp:6->mandelbrot-hls/mandelbrot.cpp:34) [26]  (6.28 ns)
+
+ <State 22>: 6.28ns
+The critical path consists of the following:
+	'sitodp' operation ('tmp_i', mandelbrot-hls/mandelbrot.cpp:6->mandelbrot-hls/mandelbrot.cpp:34) [26]  (6.28 ns)
+
+ <State 23>: 6.28ns
+The critical path consists of the following:
+	'sitodp' operation ('tmp_i', mandelbrot-hls/mandelbrot.cpp:6->mandelbrot-hls/mandelbrot.cpp:34) [26]  (6.28 ns)
+
+ <State 24>: 6.28ns
+The critical path consists of the following:
+	'sitodp' operation ('tmp_i', mandelbrot-hls/mandelbrot.cpp:6->mandelbrot-hls/mandelbrot.cpp:34) [26]  (6.28 ns)
+
+ <State 25>: 7.79ns
+The critical path consists of the following:
+	'dmul' operation ('tmp_1_i', mandelbrot-hls/mandelbrot.cpp:6->mandelbrot-hls/mandelbrot.cpp:34) [27]  (7.79 ns)
+
+ <State 26>: 7.79ns
+The critical path consists of the following:
+	'dmul' operation ('tmp_1_i', mandelbrot-hls/mandelbrot.cpp:6->mandelbrot-hls/mandelbrot.cpp:34) [27]  (7.79 ns)
+
+ <State 27>: 7.79ns
+The critical path consists of the following:
+	'dmul' operation ('tmp_1_i', mandelbrot-hls/mandelbrot.cpp:6->mandelbrot-hls/mandelbrot.cpp:34) [27]  (7.79 ns)
+
+ <State 28>: 7.79ns
+The critical path consists of the following:
+	'dmul' operation ('tmp_1_i', mandelbrot-hls/mandelbrot.cpp:6->mandelbrot-hls/mandelbrot.cpp:34) [27]  (7.79 ns)
+
+ <State 29>: 7.79ns
+The critical path consists of the following:
+	'dmul' operation ('tmp_1_i', mandelbrot-hls/mandelbrot.cpp:6->mandelbrot-hls/mandelbrot.cpp:34) [27]  (7.79 ns)
+
+ <State 30>: 7.79ns
+The critical path consists of the following:
+	'dmul' operation ('tmp_1_i', mandelbrot-hls/mandelbrot.cpp:6->mandelbrot-hls/mandelbrot.cpp:34) [27]  (7.79 ns)
+
+ <State 31>: 8.23ns
+The critical path consists of the following:
+	'dadd' operation ('cr', mandelbrot-hls/mandelbrot.cpp:6->mandelbrot-hls/mandelbrot.cpp:34) [28]  (8.23 ns)
+
+ <State 32>: 8.23ns
+The critical path consists of the following:
+	'dadd' operation ('cr', mandelbrot-hls/mandelbrot.cpp:6->mandelbrot-hls/mandelbrot.cpp:34) [28]  (8.23 ns)
+
+ <State 33>: 8.23ns
+The critical path consists of the following:
+	'dadd' operation ('cr', mandelbrot-hls/mandelbrot.cpp:6->mandelbrot-hls/mandelbrot.cpp:34) [28]  (8.23 ns)
+
+ <State 34>: 8.23ns
+The critical path consists of the following:
+	'dadd' operation ('cr', mandelbrot-hls/mandelbrot.cpp:6->mandelbrot-hls/mandelbrot.cpp:34) [28]  (8.23 ns)
+
+ <State 35>: 8.23ns
+The critical path consists of the following:
+	'dadd' operation ('cr', mandelbrot-hls/mandelbrot.cpp:6->mandelbrot-hls/mandelbrot.cpp:34) [28]  (8.23 ns)
+
+ <State 36>: 7.79ns
+The critical path consists of the following:
+	'phi' operation ('temp') with incoming values : ('temp', mandelbrot-hls/mandelbrot.cpp:19->mandelbrot-hls/mandelbrot.cpp:38) [32]  (0 ns)
+	'dmul' operation ('tmp_9_i', mandelbrot-hls/mandelbrot.cpp:18->mandelbrot-hls/mandelbrot.cpp:38) [39]  (7.79 ns)
+
+ <State 37>: 7.79ns
+The critical path consists of the following:
+	'dmul' operation ('tmp_9_i', mandelbrot-hls/mandelbrot.cpp:18->mandelbrot-hls/mandelbrot.cpp:38) [39]  (7.79 ns)
+
+ <State 38>: 7.79ns
+The critical path consists of the following:
+	'dmul' operation ('tmp_9_i', mandelbrot-hls/mandelbrot.cpp:18->mandelbrot-hls/mandelbrot.cpp:38) [39]  (7.79 ns)
+
+ <State 39>: 7.79ns
+The critical path consists of the following:
+	'dmul' operation ('tmp_9_i', mandelbrot-hls/mandelbrot.cpp:18->mandelbrot-hls/mandelbrot.cpp:38) [39]  (7.79 ns)
+
+ <State 40>: 7.79ns
+The critical path consists of the following:
+	'dmul' operation ('tmp_9_i', mandelbrot-hls/mandelbrot.cpp:18->mandelbrot-hls/mandelbrot.cpp:38) [39]  (7.79 ns)
+
+ <State 41>: 7.79ns
+The critical path consists of the following:
+	'dmul' operation ('tmp_9_i', mandelbrot-hls/mandelbrot.cpp:18->mandelbrot-hls/mandelbrot.cpp:38) [39]  (7.79 ns)
+
+ <State 42>: 8.23ns
+The critical path consists of the following:
+	'dadd' operation ('tmp_1_i4', mandelbrot-hls/mandelbrot.cpp:18->mandelbrot-hls/mandelbrot.cpp:38) [41]  (8.23 ns)
+
+ <State 43>: 8.23ns
+The critical path consists of the following:
+	'dadd' operation ('tmp_1_i4', mandelbrot-hls/mandelbrot.cpp:18->mandelbrot-hls/mandelbrot.cpp:38) [41]  (8.23 ns)
+
+ <State 44>: 8.23ns
+The critical path consists of the following:
+	'dadd' operation ('tmp_1_i4', mandelbrot-hls/mandelbrot.cpp:18->mandelbrot-hls/mandelbrot.cpp:38) [41]  (8.23 ns)
+
+ <State 45>: 8.23ns
+The critical path consists of the following:
+	'dadd' operation ('tmp_1_i4', mandelbrot-hls/mandelbrot.cpp:18->mandelbrot-hls/mandelbrot.cpp:38) [41]  (8.23 ns)
+
+ <State 46>: 8.23ns
+The critical path consists of the following:
+	'dadd' operation ('tmp_1_i4', mandelbrot-hls/mandelbrot.cpp:18->mandelbrot-hls/mandelbrot.cpp:38) [41]  (8.23 ns)
+
+ <State 47>: 8.23ns
+The critical path consists of the following:
+	'dsub' operation ('tmp_3_i6', mandelbrot-hls/mandelbrot.cpp:19->mandelbrot-hls/mandelbrot.cpp:38) [52]  (8.23 ns)
+
+ <State 48>: 8.23ns
+The critical path consists of the following:
+	'dsub' operation ('tmp_3_i6', mandelbrot-hls/mandelbrot.cpp:19->mandelbrot-hls/mandelbrot.cpp:38) [52]  (8.23 ns)
+
+ <State 49>: 8.23ns
+The critical path consists of the following:
+	'dsub' operation ('tmp_3_i6', mandelbrot-hls/mandelbrot.cpp:19->mandelbrot-hls/mandelbrot.cpp:38) [52]  (8.23 ns)
+
+ <State 50>: 8.23ns
+The critical path consists of the following:
+	'dsub' operation ('tmp_3_i6', mandelbrot-hls/mandelbrot.cpp:19->mandelbrot-hls/mandelbrot.cpp:38) [52]  (8.23 ns)
+
+ <State 51>: 8.23ns
+The critical path consists of the following:
+	'dsub' operation ('tmp_3_i6', mandelbrot-hls/mandelbrot.cpp:19->mandelbrot-hls/mandelbrot.cpp:38) [52]  (8.23 ns)
+
+ <State 52>: 8.23ns
+The critical path consists of the following:
+	'dadd' operation ('temp', mandelbrot-hls/mandelbrot.cpp:19->mandelbrot-hls/mandelbrot.cpp:38) [53]  (8.23 ns)
+
+ <State 53>: 8.23ns
+The critical path consists of the following:
+	'dadd' operation ('temp', mandelbrot-hls/mandelbrot.cpp:19->mandelbrot-hls/mandelbrot.cpp:38) [53]  (8.23 ns)
+
+ <State 54>: 8.23ns
+The critical path consists of the following:
+	'dadd' operation ('temp', mandelbrot-hls/mandelbrot.cpp:19->mandelbrot-hls/mandelbrot.cpp:38) [53]  (8.23 ns)
+
+ <State 55>: 8.23ns
+The critical path consists of the following:
+	'dadd' operation ('temp', mandelbrot-hls/mandelbrot.cpp:19->mandelbrot-hls/mandelbrot.cpp:38) [53]  (8.23 ns)
+
+ <State 56>: 8.23ns
+The critical path consists of the following:
+	'dadd' operation ('temp', mandelbrot-hls/mandelbrot.cpp:19->mandelbrot-hls/mandelbrot.cpp:38) [53]  (8.23 ns)
+
+ <State 57>: 7.79ns
+The critical path consists of the following:
+	'dmul' operation ('tmp_5_i', mandelbrot-hls/mandelbrot.cpp:20->mandelbrot-hls/mandelbrot.cpp:38) [55]  (7.79 ns)
+
+ <State 58>: 7.79ns
+The critical path consists of the following:
+	'dmul' operation ('tmp_5_i', mandelbrot-hls/mandelbrot.cpp:20->mandelbrot-hls/mandelbrot.cpp:38) [55]  (7.79 ns)
+
+ <State 59>: 8.23ns
+The critical path consists of the following:
+	'dadd' operation ('zi', mandelbrot-hls/mandelbrot.cpp:20->mandelbrot-hls/mandelbrot.cpp:38) [56]  (8.23 ns)
+
+ <State 60>: 8.23ns
+The critical path consists of the following:
+	'dadd' operation ('zi', mandelbrot-hls/mandelbrot.cpp:20->mandelbrot-hls/mandelbrot.cpp:38) [56]  (8.23 ns)
+
+ <State 61>: 8.23ns
+The critical path consists of the following:
+	'dadd' operation ('zi', mandelbrot-hls/mandelbrot.cpp:20->mandelbrot-hls/mandelbrot.cpp:38) [56]  (8.23 ns)
+
+ <State 62>: 8.23ns
+The critical path consists of the following:
+	'dadd' operation ('zi', mandelbrot-hls/mandelbrot.cpp:20->mandelbrot-hls/mandelbrot.cpp:38) [56]  (8.23 ns)
+
+ <State 63>: 8.23ns
+The critical path consists of the following:
+	'dadd' operation ('zi', mandelbrot-hls/mandelbrot.cpp:20->mandelbrot-hls/mandelbrot.cpp:38) [56]  (8.23 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+	State 21
+	State 22
+	State 23
+	State 24
+	State 25
+	State 26
+	State 27
+	State 28
+	State 29
+	State 30
+	State 31
+	State 32
+	State 33
+	State 34
+	State 35
+	State 36
+	State 37
+	State 38
+	State 39
+	State 40
+	State 41
+	State 42
+	State 43
+	State 44
+	State 45
+	State 46
+	State 47
+	State 48
+	State 49
+	State 50
+	State 51
+	State 52
+	State 53
+	State 54
+	State 55
+	State 56
+	State 57
+	State 58
+	State 59
+	State 60
+	State 61
+	State 62
+	State 63
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

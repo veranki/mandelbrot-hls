@@ -1,0 +1,159 @@
+<profile>
+
+<section name = "Vivado HLS Report for 'mandlebrot_main'" level="0">
+<item name = "Date">Thu May 17 09:28:33 2018
+</item>
+<item name = "Version">2017.4 (Build 2086221 on Fri Dec 15 21:13:33 MST 2017)</item>
+<item name = "Project">mandelbrot-hls</item>
+<item name = "Solution">solution1</item>
+<item name = "Product family">zynq</item>
+<item name = "Target device">xc7z020clg484-1</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing (ns)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">10.00, 9.40, 1.25</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency (clock cycles)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">, min, max, min, max, Type</keys>
+<column name="">24126465, 7531930625, 24126465, 7531930625, none</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="7">Instance, Module, min, max, min, max, Type</keys>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+<column name="- Loop 1">24126464, 7531930624, 47122 ~ 14710802, -, -, 512, no</column>
+<column name=" + Loop 1.1">47104, 14710784, 46 ~ 14366, -, -, 1024, no</column>
+<column name="  ++ Loop 1.1.1">28, 14347, 28, -, -, 1 ~ 512, no</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Utilization Estimates" level="0">
+<item name = "Summary"><table name="" hasTotal="1">
+<keys size="5">Name, BRAM_18K, DSP48E, FF, LUT</keys>
+<column name="DSP">-, -, -, -</column>
+<column name="Expression">-, -, 0, 164</column>
+<column name="FIFO">-, -, -, -</column>
+<column name="Instance">-, 25, 1621, 3419</column>
+<column name="Memory">-, -, -, -</column>
+<column name="Multiplexer">-, -, -, 456</column>
+<column name="Register">-, -, 776, -</column>
+<specialColumn name="Available">280, 220, 106400, 53200</specialColumn>
+<specialColumn name="Utilization (%)">0, 11, 2, 7</specialColumn>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="1">
+<keys size="6">Instance, Module, BRAM_18K, DSP48E, FF, LUT</keys>
+<column name="mandlebrot_main_dbkb_U1">mandlebrot_main_dbkb, 0, 3, 445, 1149</column>
+<column name="mandlebrot_main_dcud_U2">mandlebrot_main_dcud, 0, 11, 317, 578</column>
+<column name="mandlebrot_main_dcud_U3">mandlebrot_main_dcud, 0, 11, 317, 578</column>
+<column name="mandlebrot_main_ddEe_U4">mandlebrot_main_ddEe, 0, 0, 130, 469</column>
+<column name="mandlebrot_main_seOg_U5">mandlebrot_main_seOg, 0, 0, 412, 645</column>
+</table>
+</item>
+<item name = "DSP48"><table name="" hasTotal="0">
+<keys size="3">Instance, Module, Expression</keys>
+</table>
+</item>
+<item name = "Memory"><table name="" hasTotal="1">
+<keys size="9">Memory, Module, BRAM_18K, FF, LUT, Words, Bits, Banks, W*Bits*Banks</keys>
+</table>
+</item>
+<item name = "FIFO"><table name="" hasTotal="1">
+<keys size="7">Name, BRAM_18K, FF, LUT, Depth, Bits, Size:D*B</keys>
+</table>
+</item>
+<item name = "Expression"><table name="" hasTotal="1">
+<keys size="7">Variable Name, Operation, DSP48E, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
+<column name="i_fu_227_p2">+, 0, 0, 17, 10, 1</column>
+<column name="tmp_8_fu_295_p2">+, 0, 0, 28, 21, 21</column>
+<column name="x_fu_213_p2">+, 0, 0, 18, 11, 1</column>
+<column name="y_fu_192_p2">+, 0, 0, 17, 10, 1</column>
+<column name="tmp_5_fu_268_p2">and, 0, 0, 8, 1, 1</column>
+<column name="exitcond1_fu_186_p2">icmp, 0, 0, 13, 10, 11</column>
+<column name="exitcond_fu_207_p2">icmp, 0, 0, 13, 11, 12</column>
+<column name="notlhs_fu_250_p2">icmp, 0, 0, 13, 11, 2</column>
+<column name="notrhs_fu_256_p2">icmp, 0, 0, 29, 52, 1</column>
+<column name="tmp_3_fu_262_p2">or, 0, 0, 8, 1, 1</column>
+</table>
+</item>
+<item name = "Multiplexer"><table name="" hasTotal="1">
+<keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
+<column name="ap_NS_fsm">273, 64, 1, 64</column>
+<column name="grp_fu_134_opcode">15, 3, 2, 6</column>
+<column name="grp_fu_134_p0">21, 4, 64, 256</column>
+<column name="grp_fu_134_p1">33, 6, 64, 384</column>
+<column name="grp_fu_140_p0">27, 5, 64, 320</column>
+<column name="grp_fu_140_p1">27, 5, 64, 320</column>
+<column name="grp_fu_161_p0">15, 3, 32, 96</column>
+<column name="n_reg_98">9, 2, 10, 20</column>
+<column name="x_assign_reg_86">9, 2, 11, 22</column>
+<column name="y_assign_reg_74">9, 2, 10, 20</column>
+<column name="zi_i_reg_122">9, 2, 64, 128</column>
+<column name="zr_i_reg_110">9, 2, 64, 128</column>
+</table>
+</item>
+<item name = "Register"><table name="" hasTotal="1">
+<keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
+<column name="ap_CS_fsm">63, 0, 63, 0</column>
+<column name="ci_reg_323">64, 0, 64, 0</column>
+<column name="cr_reg_341">64, 0, 64, 0</column>
+<column name="i_reg_350">10, 0, 10, 0</column>
+<column name="n_reg_98">10, 0, 10, 0</column>
+<column name="reg_164">64, 0, 64, 0</column>
+<column name="reg_169">64, 0, 64, 0</column>
+<column name="reg_175">64, 0, 64, 0</column>
+<column name="tmp_1_i4_reg_365">64, 0, 64, 0</column>
+<column name="tmp_9_i_reg_355">64, 0, 64, 0</column>
+<column name="tmp_cast_reg_318">10, 0, 21, 11</column>
+<column name="tmp_i_6_reg_360">64, 0, 64, 0</column>
+<column name="tmp_reg_346">1, 0, 1, 0</column>
+<column name="x_assign_reg_86">11, 0, 11, 0</column>
+<column name="x_reg_336">11, 0, 11, 0</column>
+<column name="y_assign_reg_74">10, 0, 10, 0</column>
+<column name="y_reg_313">10, 0, 10, 0</column>
+<column name="zi_i_reg_122">64, 0, 64, 0</column>
+<column name="zr_i_reg_110">64, 0, 64, 0</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Interface" level="0">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">RTL Ports, Dir, Bits, Protocol, Source Object, C Type</keys>
+<column name="ap_clk">in, 1, ap_ctrl_hs, mandlebrot_main, return value</column>
+<column name="ap_rst">in, 1, ap_ctrl_hs, mandlebrot_main, return value</column>
+<column name="ap_start">in, 1, ap_ctrl_hs, mandlebrot_main, return value</column>
+<column name="ap_done">out, 1, ap_ctrl_hs, mandlebrot_main, return value</column>
+<column name="ap_idle">out, 1, ap_ctrl_hs, mandlebrot_main, return value</column>
+<column name="ap_ready">out, 1, ap_ctrl_hs, mandlebrot_main, return value</column>
+<column name="res_address0">out, 19, ap_memory, res, array</column>
+<column name="res_ce0">out, 1, ap_memory, res, array</column>
+<column name="res_we0">out, 1, ap_memory, res, array</column>
+<column name="res_d0">out, 32, ap_memory, res, array</column>
+</table>
+</item>
+</section>
+</profile>
